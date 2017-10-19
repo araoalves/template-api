@@ -1,14 +1,14 @@
 package br.com.template.dao;
 
+import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
+import java.util.List;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
-import java.util.List;
 
 public class AbstractDAO<T, PK extends Serializable> {
 
@@ -44,12 +44,13 @@ public class AbstractDAO<T, PK extends Serializable> {
         return entity;
     }
 
-    protected void delete(T entity) throws Exception {
+    protected T delete(T entity) throws Exception {
         try {
             getSession().delete(entity);
         } catch (Throwable t) {
             throw new Exception(t.getMessage());
         }
+        return entity;
     }
 
     protected Criteria createEntityCriteria() throws Exception {

@@ -29,8 +29,13 @@ public class UserDAO extends AbstractDAO<User, Integer> implements IUserDAO {
 	}
 
 	@Override
-	public Object updateUser(User user) throws Exception {
+	public User updateUser(User user) throws Exception {
 		return update(user);
+	}
+
+	@Override
+	public User deletUser(User user) throws Exception {
+		return delete(user);
 	}
 
 }

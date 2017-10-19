@@ -12,6 +12,8 @@ public interface IUserDAO {
 
 	User getUserById(Integer id) throws Exception;
 
-	Object updateUser(User user) throws Exception;
+	User updateUser(User user) throws Exception;
+
+	User deletUser(User user) throws Exception;
 
 }

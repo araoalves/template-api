@@ -69,5 +69,15 @@ public class UserResource {
 	            return new ResponseEntity<>(new Response(13,ex.getMessage()), HttpStatus.BAD_REQUEST);
 	        }
 	    }
+	 
+	 @RequestMapping(value = "/deletUser/", method = RequestMethod.POST, produces = {"application/json"})
+	    public ResponseEntity<?> deletUser(@RequestBody User user){
+	        try {	        	
+	            return ResponseEntity.ok(facade.get(IUserBO.class).deletUser(user));
+	        }catch (Exception ex){
+	            logger.error(ex.getMessage());
+	            return new ResponseEntity<>(new Response(13,ex.getMessage()), HttpStatus.BAD_REQUEST);
+	        }
+	    }
 	
 }

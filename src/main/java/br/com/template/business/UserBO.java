@@ -30,8 +30,13 @@ public class UserBO implements IUserBO {
 	}
 
 	@Override
-	public Object updateUser(User user) throws Exception {
+	public User updateUser(User user) throws Exception {
 		return userDAO.updateUser(user);
+	}
+
+	@Override
+	public User deletUser(User user) throws Exception {
+		return userDAO.deletUser(user);
 	}
 
 }
