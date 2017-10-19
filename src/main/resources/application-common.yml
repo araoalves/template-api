@@ -1,0 +1,22 @@
+app:
+  name: Template de API
+  description: appDescription
+  version: v1.0
+  terms: TERMS
+  contact:
+        name: Node TI
+        url: www.nodeti.com.br
+        email: arao.alves7@gmail.com
+  license: API LICENSE
+  licenseUrl: URL LICENSE
+
+
+#---------------------- PROXY CONFIGURATIONS FOR REST REQUESTS ---------------------
+rest:
+  configuration:
+       useProxy: true
+       proxyHost: proxy.ceuma.edu.br
+       port: 3128
+       credentials:
+            username: 4588
+            password: 123456

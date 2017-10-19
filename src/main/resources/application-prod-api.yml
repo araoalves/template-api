@@ -1,0 +1,9 @@
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/template-api
+    profiles:
+      active: prod-api
+      include: common
+      
+app:
+    context: Api Production

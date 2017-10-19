@@ -1,0 +1,43 @@
+# --------------------------------------- CONTEXT PATH ---------------------------------
+server:
+    context-path: /template-api
+    port: 8089
+
+#-------------------------------------- DATABASE CREDENTIALS ---------------------------
+datasource:
+    password: 
+    username: root
+
+#-------------------------------------- SECURE URL -------------------------------------
+template:
+    api:
+      urlAuthenticationNeeded: true
+      token: 123456
+
+#-------------------------------------- DRIVER CONNECTION JDBC -------------------------
+jdbc:
+    driver:
+        className: net.sourceforge.jtds.jdbc.Driver
+
+#------------------------------------- HIBERNATE PROPERTIES ---------------------------
+properties:
+    hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: false
+        hbm2ddl:
+            auto: update
+        id:
+            new_generator_mappings: false
+        show_sql: false
+        transaction:
+            auto_close_session: true
+
+#------------------------------------- SPRING PROPERTIES --------------------------------
+spring:
+    jackson:
+        serialization:
+            INDENT_OUTPUT: true
+    #--------------------------------- CHOOSE PROFILE (dev-api, prod-api -------------------
+    # Quando subir para produçao, esta propriedade devera ser comentada para que o perfil seja escolhido via commandline
+    profiles:
+       active: dev-api
